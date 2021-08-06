@@ -1,5 +1,5 @@
-const UserControllers = require('./controllers/UserController')
-const UserController = require('./controllers/UserController')
+const UserControllers = require('./controllers/UserControllers')
+const UserController = require('./controllers/UserControllers')
 
 module.exports = (app) =>{
     app.post('/user',UserControllers.create);
