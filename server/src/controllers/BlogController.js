@@ -1,6 +1,7 @@
 const {Blog} = require('../models');
 
 module.exports = {
+    //get all blog
     async index(req, res){
        try{
            const blogs = await Blog.findAll();
@@ -12,6 +13,7 @@ module.exports = {
            });
        }
     },
+    //create blog
     async create(req, res){
         try{
             const blog = await Blog.create(req.body);
@@ -22,6 +24,7 @@ module.exports = {
             });
         }
     },
+    //edit blog
     async put(req, res){
         try{
             await Blog.update(req.body, {
@@ -37,6 +40,7 @@ module.exports = {
             });
         }
     },
+    //delete blog
     async remove(req, res){
         try{
             const blog = await Blog.findOne({
@@ -59,7 +63,7 @@ module.exports = {
             });
     }
 },
-    //create user
+    //get blog by id
     async show(req, res){
         try{
             const blog = await Blog.findByPk(req.params.userId);

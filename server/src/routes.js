@@ -1,6 +1,6 @@
 const UserAuthenController = require('./controllers/UserAuthenController');
 const UserControllers = require('./controllers/UserControllers')
-const UserController = require('./controllers/UserControllers')
+//const UserController = require('./controllers/UserControllers')
 const isAuthenController = require('./authen/isAuthenController')
 const BlogController = require('./controllers/BlogController')
 const CommentController = require('./controllers/CommentController')
