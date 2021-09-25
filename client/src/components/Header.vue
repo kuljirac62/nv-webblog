@@ -6,7 +6,7 @@
         <li><router-link :to="{ name: 'users' }"> Users </router-link></li>
         <li><router-link :to="{ name: 'comments' }"> Comments</router-link></li>
         <li><router-link :to="{ name: 'login' }"> Login </router-link></li>
-        <li><a v-on:click.prevent="logout" href="#"> Logout </a></li> 
+        <li><a v-on:click.prevent="logout" href="#"> Logout </a></li>
       </ul>
       <div class="clearfix"></div>
     </div>
@@ -14,22 +14,21 @@
 </template>
 <script>
 export default {
-  methods:{
   logout () {
-          this.$store.dispatch('setToken', null)
-          this.$store.dispatch('setUser', null)
+          this.$store.dispatch('setTkoen', null)
+          this.$store.dispatch('setComment', null)
           this.$router.push({
             name: 'login'
     })
-    }
   }
 }
 </script>
 <style scoped>
 .nv-navbar {
-  background-color: pink;
+  background-color: palegoldenrod;
   width: 100%;
-  padding: 10px 0px 10px 0px;
+  padding: 1px 0px 1px 0px;
+  /*padding: 10px 0px 10px 0px;*/ 
 }
 .nv-navbar .nav {
   list-style: none;
@@ -52,7 +51,7 @@ export default {
   color: darkslategrey;
 }
 .nv-navbar .nav li a.router-link-active {
-  background-color: rgb(51, 158, 247);
+  background-color: gold;
   color: darkolivegreen;
 }
 .clearfix {

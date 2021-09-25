@@ -1,48 +1,48 @@
 <template>
-<div>
-    <h1>Create User</h1>
-    <form v-on:submit.prevent = "createUser">
-        <p>Name : <input type="text" v-model="user.name"></p>
-        <p>Lastname : <input type="text" v-model="user.lastname"></p>
-        <p>Email : <input type="text" v-model="user.email"></p>
-        <p>Password : <input type="text" v-model="user.password"></p>
-        <p><button type="submit">Create User</button></p>
-    </form>
+  <div>
+    <h1> Create User</h1>
+      <form v-on:submit.prevent = " createUser">
+        <div>name : <input type="text" v-model="user.name"></div>
+        <div>lastname : <input type="text" v-model="user.lastname"></div>
+        <div>email : <input type="text" v-model="user.email"></div>
+        <div>password : <input type="text" v-model="user.password"></div>
+        <div><button type="submit">Create User</button></div>
+      </form>
     <hr>
-    <div>
-        <p>Name : {{user.name}}</p>
-        <p>Lastname : {{user.lastname}}</p>
-        <p>Email : {{user.email}}</p>
-        <p>Password : {{user.password}}</p>
-    </div>
-</div>
+      <div>
+        <div>name : {{user.name}}</div>
+        <div>lastname : {{user.lastname}}</div>
+        <div>email : {{user.email}}</div>
+        <div>password : {{user.password}}</div>
+      </div>
+  </div>
 </template>
 <script>
 import UsersService from '@/services/UsersService'
-export default {
-    data() {
-        return {
-            user: {
-                name: '',
-                lastname: '',
-                email: '',
-                password: '',
-                status: 'active'
-            }
-        }
-    },
-    methods: {
-        async createUser() {
-            try {
-                await UsersService.post(this.user)
-                this.$router.push({
-                    name: 'users'
-                })
-            } catch (error) {
-                console.log(error)
-            }
-        }
+export default{
+  data () {
+    return {
+      user : {
+        name : '',
+        lastname : '',
+        email : '',
+        password : '',
+        status : 'active'
+      }
     }
+  },
+  methods: {
+    async createUser () {
+      try {
+        await UsersService.post(this.user)
+          this.$router.push({
+            name : 'users'
+        })
+      }catch (error) {
+        console.log(error)
+      }
+    }
+  },
 }
 </script>
 <style scoped>
